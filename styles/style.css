@@ -1,5 +1,348 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-image: var(--background-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: var(--background-color);
+  font-family: var(--font-family, sans-serif);
+  color: var(--text-color);
+  font-size: 18px;
+  font-weight: 400;
 }
+
+/*header*/
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  justify-items: end;
+  height: 100vh;
+  min-height: 668px;
+  padding: 10px;
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inline-size: 25px;
+  block-size: 25px;
+  top: 10px;
+  right: 10px;
+  border-block-start: 1px solid var(--accent-color);
+  border-inline-end: 1px solid var(--accent-color);
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inline-size: 25px;
+  block-size: 25px;
+  bottom: 10px;
+  left: 10px;
+  border-inline-start: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--accent-color);
+}
+
+.decorated-element {
+  position: absolute;
+  z-index: 1;
+  margin-inline-end: 10px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  inset-inline-end: 10px;
+  inset-block-start: 10px;
+}
+
+.decorated-element::after {
+  display: inline-block;
+  content: "";
+  margin-inline-start: 10px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 4px 3px var(--accent-color);
+}
+
+.header__theme-menu {
+  align-self: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  list-style-type: none;
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  color: var(--button__color);
+  text-transform: lowercase;
+  line-height: 100%;
+  border: 1px solid transparent;
+  padding: 1.5px 13px;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--button__hover-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--accent-color);
+  pointer-events: none;
+}
+
+.header__title {
+  justify-self: start;
+  color: var(--header__title-color);
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  line-height: 82.5%;
+}
+
+.header__annotation {
+  margin-block: 55px;
+  color: var(--title__paragraph-color);
+  background-color: var(--background__text-color);
+  background-size: cover;
+  font-weight: 700;
+  max-inline-size: clamp(355px, 50%, 491px);
+}
+
+/*main*/
+
+.content {
+  display: grid;
+  gap: 50px;
+  padding: 40px 10px;
+}
+
+.content__section {
+  display: grid;
+  gap: 20px;
+}
+
+.content__text-block {
+  display: grid;
+  gap: 20px;
+}
+
+.content__title {
+  color: var(--content__title-color);
+  font-weight: 700;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.content__paragraph {
+  display: grid;
+  gap: 10px;
+}
+
+.content__title-paragraph {
+  color: var(--title__paragraph-color);
+  background-color: var(--accent-color);
+  font-weight: 700;
+  font-size: inherit;
+  line-height: inherit;
+  align-self: center;
+}
+
+.content__title-regular {
+  color: var(--title__paragraph-color);
+  background-color: var(--accent-color);
+  font-weight: 400;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.content__text-paragraph {
+  color: var(--text-color);
+  line-height: 130%;
+}
+
+.link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--shadow__link-color);
+}
+
+.link:hover {
+  border-bottom: 1px solid var(--text-color);
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  outline: 1px solid var(--text-color);
+}
+
+.content__gallery {
+  display: grid;
+  gap: 10px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.gallery__item {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+/*footer*/
+
+.footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  min-height: 668px;
+  padding: 10px;
+}
+
+.footer__title {
+  justify-self: start;
+  color: var(--header__title-color);
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  line-height: 82.5%;
+}
+
+/*media*/
+
+@media (width >= 768px) {
+
+  .header {
+    padding: 20px;
+    align-items: center;
+  }
+
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+  }
+  .decorated-zone::after {
+    bottom: 20px;
+    left: 20px;
+  }
+  .decorated-element {
+    inset-inline-end: 20px;
+    inset-block-start: 20px;
+  }
+
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    justify-self: start;
+    margin-inline-start: -20px;
+  }
+  .header__annotation {
+    justify-self: end;
+    align-self: center;
+  }
+  .content {
+    gap: 80px;
+    padding: 60px 20px;
+  }
+
+  .content__section {
+    grid-template-columns: 236px 1fr;
+}
+
+  .content__text-block-what {
+    grid-column-start: span 2;
+  }
+
+  .content__gallery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px;
+  }
+
+  .gallery__item:first-child {
+    grid-column-start: span 2;
+  }
+
+  .gallery__item:nth-child(2) {
+    grid-row-start: span 2;
+  }
+
+  .gallery__item:nth-child(3) {
+    grid-row-start: span 2;
+  }
+
+  .gallery__item:last-child {
+    grid-column-start: span 2;
+  }
+
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem)
+  }
+
+}
+
+@media (width >= 1024px) {
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .header__title {
+    align-self: center;
+  }
+
+  .header__annotation {
+    justify-items: end;
+  }
+
+  .content__section {
+    grid-template-columns: 315px 1fr;
+    column-gap: 30px;
+  }
+
+  .content__text-block-what {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+  }
+
+  .content__gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+  
