@@ -19,19 +19,5 @@
   --shadow-__link-color: #FF0070;
 }
 
-@media (prefers-color-sheme: dark) {
-  :root {
-    --background-image: url(../images/cover-image-dark.png);
-    --background-color: #000028;
-    --font-family: "IBM Plex Mono";
-    --accent-color: #FF0070;
-    --button__color: #FF0070;
-    --button__hover-color: rgba(50, 49, 45, 0.40);
-    --header__title-color: #DB00FF;
-    --content__title-color: #FF0070;
-    --title__paragraph-color: #000028;
-    --background__text-color: #FF0070;
-    --text-color: #F1B2CE;
-    --shadow-__link-color: #FF0070;
-  }
-}
+/* убран медиазапрос для темной темы*/
+
