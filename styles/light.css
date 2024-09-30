@@ -9,6 +9,7 @@
     --background-color: #FFF1F7;
     --font-family: "IBM Plex Mono";
     --accent-color: #FF8DCB;
+    --border-color: #353435;
     --button__color: #353430;
     --button__hover-color: rgba(50, 49, 45, 0.40);
     --header__title-color: #FFC2E6;
@@ -24,13 +25,16 @@
 }
 
 /*испавила sheme->scheme, оставила только селектор .decorated_element
-upd:исправила на символ кирилицы на латиницу*/
+upd:исправила на символ кирилицы на латиницу, исправила некорректные цветовые отображения декоративных элементов и кнопок 
+в состояниях в светлой теме*/
+
 @media (prefers-color-scheme: light) {
   :root {
     --background-image: url(../images/cover-image-light.png);
     --background-color: #FFF1F7;
     --font-family: "IBM Plex Mono";
     --accent-color: #FF8DCB;
+    --border-color: #353435;
     --button__color: #353430;
     --button__hover-color: rgba(50, 49, 45, 0.40);
     --header__title-color: #FFC2E6;
@@ -44,6 +48,7 @@ upd:исправила на символ кирилицы на латиницу*
 /*для проверки работы медиа после некорректной записи scheme, установила тему системы светлую, 
 и тогда декоративный элемент перестал появлятся и в темной теме при переключении на кнопку, 
 поэтому добавила селектор авто темы*/
+
     .theme_auto .decorated-element {
     display: none;
   }
